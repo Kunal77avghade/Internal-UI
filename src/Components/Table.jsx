@@ -136,6 +136,10 @@ export function Table() {
     marginTop: "3rem",
   };
 
+  const gridOptions = {
+    suppressMovableColumns: true, // Disable drag and remove
+  };
+
   return (
     <div style={style}>
       <ButtoGrid removeSelected={removeSelected} addRow={addRow} />
@@ -149,6 +153,7 @@ export function Table() {
           columnDefs={columnDefs}
           defaultColDef={defaultColDef}
           onGridReady={onGridReady}
+          gridOptions={gridOptions}
           dataTypeDefinitions={dataTypeDefinitions}
           rowSelection={"multiple"}
           animateRows={true}
